@@ -1,10 +1,5 @@
-import TextField from "@mui/material/TextField";
-import {
-  FieldValues,
-  useController,
-  UseControllerProps,
-} from "react-hook-form";
-import NumberFormat, { NumberFormatValues } from "react-number-format";
+import { FieldValues, UseControllerProps } from "react-hook-form";
+import NumberFormattedInput from "../shared/NumberFormattedInput";
 
 // Default validation rules for credit card number.
 const cardNumberRules = {
@@ -13,39 +8,18 @@ const cardNumberRules = {
     value.toString().length === 16 ? true : "Invalid card number",
 };
 
+const cardNumberFormat = "#### #### #### ####";
+
 /** Custom input component with mask and validation rules for credit card number. */
 const CardNumberInput = <TFormFields extends FieldValues>(
   props: UseControllerProps<TFormFields>
-): JSX.Element => {
-  const {
-    field: { onChange, onBlur, name: inputName, ref, value },
-    fieldState: { error },
-  } = useController({
-    ...props,
-    rules: Object.assign(cardNumberRules, props.rules),
-  });
-
-  const handleValueChange = (values: NumberFormatValues) => {
-    onChange(values.floatValue);
-  };
-
-  return (
-    <NumberFormat
-      name={inputName}
-      id={inputName}
-      label="Credit Card Number"
-      onBlur={onBlur}
-      ref={ref}
-      value={value}
-      onValueChange={handleValueChange}
-      displayType="input"
-      type="text"
-      format="#### #### #### ####"
-      error={!!error}
-      helperText={error?.message}
-      customInput={TextField}
-    />
-  );
-};
+): JSX.Element => (
+  <NumberFormattedInput
+    {...props}
+    label="Credit Card Number"
+    format={cardNumberFormat}
+    rules={Object.assign(cardNumberRules, props.rules)}
+  />
+);
 
 export default CardNumberInput;
