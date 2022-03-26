@@ -1,10 +1,11 @@
+import { RegisterCardData } from "../../models/RegisterCardData";
 import Header from "../Header";
 import Greeting from "./Greeting";
 import RegisterCardForm from "./RegisterCardForm";
 
 const RegisterCard = () => {
-  const handleSubmit = () => {
-    console.log("submitted!");
+  const handleSubmit = (data: RegisterCardData) => {
+    console.log("submitted!", data);
   };
   return (
     <div className="w-full h-full flex flex-col items-center">
