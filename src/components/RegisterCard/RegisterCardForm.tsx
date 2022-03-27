@@ -21,6 +21,7 @@ const RegisterCardForm = ({
   return (
     <div className="p-6 w-full sm:w-2/3 max-w-lg">
       <form
+        aria-label="register card"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="mb-6">
