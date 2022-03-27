@@ -32,7 +32,6 @@ const ExpiryDateInput = <TFormFields extends FieldValues>(
     rules={Object.assign(ExpiryDateRules, props.rules)}
     placeholder="MM/YY"
     mask={['M', 'M', 'Y', 'Y']}
-    returnStringValue
   />
 );
 

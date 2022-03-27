@@ -1,5 +1,5 @@
 export interface RegisterCardData {
-    cardNumber: number;
-    cvc: number;
-    expiry: number;
+    cardNumber: string;
+    cvc: string;
+    expiry: string;
 }

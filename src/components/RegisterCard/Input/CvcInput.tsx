@@ -4,8 +4,8 @@ import NumberFormattedInput from "../../shared/NumberFormattedInput";
 // Default validation rules for cvc.
 const CvcRules = {
   required: "CVC cannot be empty",
-  validate: (value: number) =>
-    value.toString().length === 3 ? true : "Invalid CVC",
+  validate: (value: string) =>
+    value.length === 3 ? true : "Invalid CVC",
 };
 
 const CvcFormat = "###";

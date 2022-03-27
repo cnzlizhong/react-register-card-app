@@ -1,11 +1,11 @@
 import { RegisterCardData } from "../../models/RegisterCardData";
-import Header from "../Header";
+import Header from "../shared/Header";
 import Greeting from "./Greeting";
 import RegisterCardForm from "./RegisterCardForm";
 
 const RegisterCard = () => {
   const handleSubmit = (data: RegisterCardData) => {
-    console.log("submitted!", data);
+    alert(`Thank you for registering a credit card.\n Card number: ${data.cardNumber}\n CVC: ${data.cvc}\n Expiry: ${data.expiry}`);
   };
   return (
     <div className="w-full h-full flex flex-col items-center">

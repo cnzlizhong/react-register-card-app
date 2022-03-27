@@ -4,8 +4,8 @@ import NumberFormattedInput from "../../shared/NumberFormattedInput";
 // Default validation rules for credit card number.
 const cardNumberRules = {
   required: "Credit card number cannot be empty",
-  validate: (value: number) =>
-    value.toString().length === 16 ? true : "Invalid card number",
+  validate: (value: string) =>
+    value.length === 16 ? true : "Invalid card number",
 };
 
 const cardNumberFormat = "#### #### #### ####";
