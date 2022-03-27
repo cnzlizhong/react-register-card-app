@@ -28,7 +28,7 @@ const NumberFormattedInput = <TFormFields extends FieldValues>({
   shouldUnregister,
   placeholder,
   mask,
-  returnStringValue = false
+  returnStringValue = false,
 }: UseControllerProps<TFormFields> & CustomInputProps): JSX.Element => {
   const {
     field: { onChange, onBlur, name: inputName, ref, value },
@@ -57,6 +57,8 @@ const NumberFormattedInput = <TFormFields extends FieldValues>({
       error={!!error}
       helperText={error?.message}
       customInput={TextField}
+      fullWidth
+      size="small"
     />
   );
 };
