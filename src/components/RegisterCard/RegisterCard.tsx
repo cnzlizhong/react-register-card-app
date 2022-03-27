@@ -5,6 +5,7 @@ import RegisterCardForm from "./RegisterCardForm";
 
 const RegisterCard = () => {
   const handleSubmit = (data: RegisterCardData) => {
+    console.log(data);
     alert(`Thank you for registering a credit card.\n Card number: ${data.cardNumber}\n CVC: ${data.cvc}\n Expiry: ${data.expiry}`);
   };
   return (
