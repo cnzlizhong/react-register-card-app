@@ -6,13 +6,13 @@ const Header = ({ headerText, isMenuHeader = false }: { headerText: string, isMe
   const { toggleMenu } = useAppContext();
   return (
     <div className="w-full flex items-center justify-center bg-yellow-400 relative">
-      <div className="absolute left-0 p-4 h-full flex items-center cursor-pointer hover:bg-yellow-500" onClick={toggleMenu}>
+      <button className="absolute left-0 p-4 h-full flex items-center hover:bg-yellow-500" onClick={toggleMenu} tabIndex={0} >
         {isMenuHeader ? (
-          <ArrowBackIcon fontSize="large" />
+          <ArrowBackIcon fontSize="large" aria-label="close menu" />
         ) : (
-          <MenuIcon fontSize="large" />
+          <MenuIcon fontSize="large" aria-label="open menu" />
         )}
-      </div>
+      </button>
       <h1 className="p-2 text-lg font-medium">{headerText}</h1>
     </div>
   );
