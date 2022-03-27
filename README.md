@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# React Credit Card Register Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the typescript template.
+
+## Features
+* Credit card form fields with production-ready validation and formatting.
+* Responsive design to suit any size of screen. Form is placed in the middle of large screens but near the bottom of small screens to make it more reachable by fingers.
+* Slided-out menu panel which brings better UX.
+* Accessibility considered. Elements are selectable with tab key.
+* Unit tests implemented.
+* State management with React Context API.
+
+## TODOs
+* Process form data before submitting (eg. Convert string to number).
+* Clear form after submit.
+* More unit tests (eg. Check validation error message)
 
 ## Available Scripts
 
