@@ -12,6 +12,9 @@ import NumberFormat, {
 interface CustomInputProps {
   label: string;
   format: string | FormatInputValueFunction;
+  placeholder?: string;
+  mask?: string | string[];
+  returnStringValue?: boolean;
 }
 
 /** Custom formatted input component for number. */
@@ -23,6 +26,9 @@ const NumberFormattedInput = <TFormFields extends FieldValues>({
   rules,
   defaultValue,
   shouldUnregister,
+  placeholder,
+  mask,
+  returnStringValue = false
 }: UseControllerProps<TFormFields> & CustomInputProps): JSX.Element => {
   const {
     field: { onChange, onBlur, name: inputName, ref, value },
@@ -30,7 +36,7 @@ const NumberFormattedInput = <TFormFields extends FieldValues>({
   } = useController({ name, control, rules, defaultValue, shouldUnregister });
 
   const handleValueChange = (values: NumberFormatValues) => {
-    onChange(values.floatValue);
+    onChange(returnStringValue ? values.value : values.floatValue);
   };
 
   return (
@@ -44,6 +50,9 @@ const NumberFormattedInput = <TFormFields extends FieldValues>({
       onValueChange={handleValueChange}
       displayType="input"
       type="text"
+      isNumericString
+      placeholder={placeholder}
+      mask={mask}
       format={format}
       error={!!error}
       helperText={error?.message}

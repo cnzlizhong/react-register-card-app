@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { RegisterCardData } from "../../models/RegisterCardData";
-import CardNumberInput from "./CardNumberInput";
-import CvcInput from "./CvcInput";
-import ExpiryDateInput from "./ExpiryDateInput";
+import CardNumberInput from "./Input/CardNumberInput";
+import CvcInput from "./Input/CvcInput";
+import ExpiryDateInput from "./Input/ExpiryDateInput";
 
 const RegisterCardForm = ({
   onSubmit,

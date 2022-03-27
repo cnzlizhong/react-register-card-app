@@ -1,5 +1,5 @@
 import { FieldValues, UseControllerProps } from "react-hook-form";
-import NumberFormattedInput from "../shared/NumberFormattedInput";
+import NumberFormattedInput from "../../shared/NumberFormattedInput";
 
 // Default validation rules for credit card number.
 const cardNumberRules = {
